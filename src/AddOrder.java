@@ -1,4 +1,8 @@
 
+import DatabaseTables.FoodCategory;
+import DatabaseTables.FoodItems;
+import DatabaseTables.MySqlConnect;
+
 import java.awt.Point;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;

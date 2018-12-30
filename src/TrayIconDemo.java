@@ -15,10 +15,13 @@ import java.awt.SystemTray;
 import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.TrayIcon.MessageType;
+import java.awt.image.ImageProducer;
 import java.net.MalformedURLException;
 
 public class TrayIconDemo {
 
+    /*
+    Test Code to check tray icon
     public static void main(String[] args) throws AWTException, MalformedURLException {
         if (SystemTray.isSupported()) {
             TrayIconDemo td = new TrayIconDemo();
@@ -27,13 +30,14 @@ public class TrayIconDemo {
             System.err.println("System tray not supported!");
         }
     }
+    */
 
     public void displayTray(String foodName, int tableNo) throws AWTException, MalformedURLException {
         //Obtain only one instance of the SystemTray object
         SystemTray tray = SystemTray.getSystemTray();
 
         //If the icon is a file
-        Image image = Toolkit.getDefaultToolkit().createImage("C:\\Users\\admin\\Desktop\\Untitled.png");
+        Image image = MyConstants.TRAYICON.getImage();
         //Alternative (if the icon is on the classpath):
         //Image image = Toolkit.getToolkit().createImage(getClass().getResource("icon.png"));
 
@@ -41,7 +45,7 @@ public class TrayIconDemo {
         //Let the system resize the image if needed
         trayIcon.setImageAutoSize(true);
         //Set tooltip text for the tray icon
-        trayIcon.setToolTip("System tray icon demo");
+        trayIcon.setToolTip("The Resto Manager | Order is ready");
         tray.add(trayIcon);
 
         trayIcon.displayMessage(foodName + " is ready!!", "of Table number: " + tableNo, MessageType.INFO);

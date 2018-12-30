@@ -1,3 +1,6 @@
+package DatabaseTables;
+
+import DatabaseTables.MySqlConnect;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

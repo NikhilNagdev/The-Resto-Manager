@@ -1,4 +1,6 @@
 
+import DatabaseTables.MySqlConnect;
+
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.Point;

@@ -5,16 +5,24 @@ import javax.swing.ImageIcon;
 /**
  *
  * @author Nikhil
+ *
+ * This is interface is used to the path of the images and
+ * the icons used in pages
  */
+
+
 public interface MyConstants {
-    ImageIcon REDTABLE = new ImageIcon("C:\\Users\\admin\\Desktop\\TheRestoManager\\images\\red.png");
-    ImageIcon GREENTABLE = new ImageIcon("C:\\Users\\admin\\Desktop\\TheRestoManager\\images\\greenfre.png");
-    ImageIcon BLURREDPAGE = new ImageIcon("C:\\Users\\admin\\Desktop\\TheRestoManager\\images\\blur.png");
-    ImageIcon LOADER = new ImageIcon("C:\\Users\\admin\\Desktop\\TheRestoManager\\images\\loader.gif");
-    ImageIcon USERNAMEICON = new ImageIcon("C:\\Users\\admin\\Desktop\\TheRestoManager\\images\\man-user.png");
-    ImageIcon PASSWORDICON = new ImageIcon("C:\\Users\\admin\\Desktop\\TheRestoManager\\images\\lock.png");
-    ImageIcon FRAMELOGO = new ImageIcon("C:\\Users\\admin\\Desktop\\TheRestoManager\\images\\hotel.png");
-    ImageIcon BACKICONLIGHTGREEN  = new ImageIcon("C:\\Users\\admin\\Desktop\\TheRestoManager\\images\\backGreen.png");
-    ImageIcon BACKICONDARKGREEN = new ImageIcon("C:\\Users\\admin\\Desktop\\TheRestoManager\\images\\backDarkGreen.png");
-    File PDFFILE = new File("C:\\Users\\admin\\Desktop\\Invoice-1.pdf");
+
+    ImageIcon REDTABLE = new ImageIcon("images\\red.png");
+    ImageIcon GREENTABLE = new ImageIcon("images\\greenfre.png");
+    ImageIcon BLURREDPAGE = new ImageIcon("images\\blur.png");
+    ImageIcon LOADER = new ImageIcon("images\\loader.gif");
+    ImageIcon USERNAMEICON = new ImageIcon("images\\man-user.png");
+    ImageIcon PASSWORDICON = new ImageIcon("images\\lock.png");
+    ImageIcon FRAMELOGO = new ImageIcon("images\\hotel.png");
+    ImageIcon BACKICONLIGHTGREEN  = new ImageIcon("images\\backGreen.png");
+    ImageIcon BACKICONDARKGREEN = new ImageIcon("images\\backDarkGreen.png");
+    ImageIcon TRAYICON = new ImageIcon("images\\hotel.png");
+    File PDFFILE = new File("Invoice-1.pdf");
+
 }
