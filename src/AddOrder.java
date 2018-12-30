@@ -143,6 +143,16 @@ public class AddOrder extends javax.swing.JFrame{
         listItems.setBackground(new java.awt.Color(38, 51, 61));
         listItems.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         listItems.setForeground(new java.awt.Color(255, 255, 255));
+        listItems.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Panner tikka", "Garlic Bread", "French fries", "Spring Roll", "Chilly Paneer", "Chilly Mushroom" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        listItems.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                listItemsValueChanged(evt);
+            }
+        });
         jScrollPane2.setViewportView(listItems);
 
         listCategory.setBackground(new java.awt.Color(38, 51, 61));
@@ -333,6 +343,11 @@ public class AddOrder extends javax.swing.JFrame{
             isItemSelected = false;
         }
     }//GEN-LAST:event_listCategoryValueChanged
+
+    private void listItemsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listItemsValueChanged
+        if(!listItems.isSelectionEmpty())
+            isItemSelected = true;
+    }//GEN-LAST:event_listItemsValueChanged
 
 
     private void btnRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRightActionPerformed
@@ -718,14 +733,14 @@ public class AddOrder extends javax.swing.JFrame{
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Windows look and feel */
+        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Windows (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
