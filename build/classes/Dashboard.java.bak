@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Aarti
+ * @author Nikhil
  */
 public class Dashboard extends javax.swing.JFrame {
 
@@ -554,28 +554,28 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField9.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton1.setBackground(new java.awt.Color(110, 237, 170));
-        jButton1.setText("Bill");
+        jButton1.setText("invoice.Bill");
 
         jButton2.setBackground(new java.awt.Color(110, 237, 170));
-        jButton2.setText("Bill");
+        jButton2.setText("invoice.Bill");
 
         jButton3.setBackground(new java.awt.Color(110, 237, 170));
-        jButton3.setText("Bill");
+        jButton3.setText("invoice.Bill");
 
         jButton4.setBackground(new java.awt.Color(110, 237, 170));
-        jButton4.setText("Bill");
+        jButton4.setText("invoice.Bill");
 
         jButton5.setBackground(new java.awt.Color(110, 237, 170));
-        jButton5.setText("Bill");
+        jButton5.setText("invoice.Bill");
 
         jButton6.setBackground(new java.awt.Color(110, 237, 170));
-        jButton6.setText("Bill");
+        jButton6.setText("invoice.Bill");
 
         jButton7.setBackground(new java.awt.Color(110, 237, 170));
-        jButton7.setText("Bill");
+        jButton7.setText("invoice.Bill");
 
         jButton8.setBackground(new java.awt.Color(110, 237, 170));
-        jButton8.setText("Bill");
+        jButton8.setText("invoice.Bill");
 
         javax.swing.GroupLayout pnlBillsLayout = new javax.swing.GroupLayout(pnlBills);
         pnlBills.setLayout(pnlBillsLayout);
@@ -862,9 +862,9 @@ public class Dashboard extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Windows look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* If Windows (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {

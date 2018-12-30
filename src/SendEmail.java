@@ -51,7 +51,7 @@ public class SendEmail extends Authenticator {
 
             //attached 1 --------------------------------------------
             String file = "C:\\Users\\admin\\Desktop\\Invoice-1.pdf";
-            String fileName = "Bill.pdf";
+            String fileName = "invoice.Bill.pdf";
             messageBodyPart = new MimeBodyPart();
             DataSource source = new FileDataSource(file);
             messageBodyPart.setDataHandler(new DataHandler(source));

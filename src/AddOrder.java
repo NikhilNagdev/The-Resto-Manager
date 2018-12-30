@@ -23,7 +23,7 @@ import javax.swing.event.DocumentListener;
 
 /**
  *
- * @author Aarti
+ * @author Nikhil
  */
 public class AddOrder extends javax.swing.JFrame{
 
@@ -143,11 +143,6 @@ public class AddOrder extends javax.swing.JFrame{
         listItems.setBackground(new java.awt.Color(38, 51, 61));
         listItems.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         listItems.setForeground(new java.awt.Color(255, 255, 255));
-        listItems.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                listItemsValueChanged(evt);
-            }
-        });
         jScrollPane2.setViewportView(listItems);
 
         listCategory.setBackground(new java.awt.Color(38, 51, 61));
@@ -163,11 +158,6 @@ public class AddOrder extends javax.swing.JFrame{
         txtSearch.setBackground(new java.awt.Color(38, 51, 61));
         txtSearch.setForeground(new java.awt.Color(255, 255, 255));
         txtSearch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 217, 161)));
-        txtSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -344,14 +334,6 @@ public class AddOrder extends javax.swing.JFrame{
         }
     }//GEN-LAST:event_listCategoryValueChanged
 
-    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtSearchActionPerformed
-
-    private void listItemsValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listItemsValueChanged
-        if(!listItems.isSelectionEmpty())
-            isItemSelected = true;
-    }//GEN-LAST:event_listItemsValueChanged
 
     private void btnRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRightActionPerformed
         if(isItemSelected){
@@ -395,6 +377,7 @@ public class AddOrder extends javax.swing.JFrame{
              orderWithTable = new LinkedHashMap<>();
              System.out.println("vcvxcvxcv: " + orderWithTable);
              listConfirmed.setListData(new Vector());
+            System.out.println("Table no selected: " + (comboBoxTableNo.getSelectedIndex()+1));
              dashboard.calculateCostOfTable(comboBoxTableNo.getSelectedIndex()+1);
              dashboard.setPendingOrders();
              dashboard.bookTable(comboBoxTableNo.getSelectedIndex()+1);
@@ -544,17 +527,15 @@ public class AddOrder extends javax.swing.JFrame{
         try {
             String query = "SELECT foodname from fooditems where foodcategory = ?";
             preparedStatement = conn.prepareStatement(query);
-            System.out.println(preparedStatement + "    " + conn + "     " + fc.getCategoryID((String)listCategory.getSelectedValue()));
-            preparedStatement.setInt(1, fc.getCategoryID((String)listCategory.getSelectedValue()));
+            System.out.println(preparedStatement + "    " + conn + "     " + fc.getFoodCategoryID(listCategory.getSelectedValue()));
+            preparedStatement.setInt(1, fc.getFoodCategoryID(listCategory.getSelectedValue()));
             rs = preparedStatement.executeQuery();
             Vector<String> v = new Vector<>();
             int i=0;
             while(rs.next()){
                 v.add(rs.getString("foodname"));
-               
             }
             listItems.removeAll();
-           
             listItems.setListData(v);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Issue: "+ ex);
@@ -612,7 +593,7 @@ public class AddOrder extends javax.swing.JFrame{
                 listItems.setListData(items);   
             }
             catch(Exception e){
-                JOptionPane.showMessageDialog(null, "Issue while seraching " + e);
+                JOptionPane.showMessageDialog(null, "Issue while searching " + e);
             }
         }   
     }
@@ -737,14 +718,14 @@ public class AddOrder extends javax.swing.JFrame{
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Windows look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* If Windows (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

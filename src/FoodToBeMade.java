@@ -42,7 +42,7 @@ public class FoodToBeMade {
         try {
             return conn.prepareStatement(query).executeQuery();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Issue while getting food to be amde " + e);
+            JOptionPane.showMessageDialog(null, "Issue while getting food to be made " + e);
         }
         return null;
     }

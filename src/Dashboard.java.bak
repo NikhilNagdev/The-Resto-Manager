@@ -554,28 +554,28 @@ public class Dashboard extends javax.swing.JFrame {
         jTextField9.setForeground(new java.awt.Color(255, 255, 255));
 
         jButton1.setBackground(new java.awt.Color(110, 237, 170));
-        jButton1.setText("Bill");
+        jButton1.setText("invoice.Bill");
 
         jButton2.setBackground(new java.awt.Color(110, 237, 170));
-        jButton2.setText("Bill");
+        jButton2.setText("invoice.Bill");
 
         jButton3.setBackground(new java.awt.Color(110, 237, 170));
-        jButton3.setText("Bill");
+        jButton3.setText("invoice.Bill");
 
         jButton4.setBackground(new java.awt.Color(110, 237, 170));
-        jButton4.setText("Bill");
+        jButton4.setText("invoice.Bill");
 
         jButton5.setBackground(new java.awt.Color(110, 237, 170));
-        jButton5.setText("Bill");
+        jButton5.setText("invoice.Bill");
 
         jButton6.setBackground(new java.awt.Color(110, 237, 170));
-        jButton6.setText("Bill");
+        jButton6.setText("invoice.Bill");
 
         jButton7.setBackground(new java.awt.Color(110, 237, 170));
-        jButton7.setText("Bill");
+        jButton7.setText("invoice.Bill");
 
         jButton8.setBackground(new java.awt.Color(110, 237, 170));
-        jButton8.setText("Bill");
+        jButton8.setText("invoice.Bill");
 
         javax.swing.GroupLayout pnlBillsLayout = new javax.swing.GroupLayout(pnlBills);
         pnlBills.setLayout(pnlBillsLayout);

@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author Aarti
+ * @author Nikhil
  */
 public interface MyConstants {
     ImageIcon REDTABLE = new ImageIcon("C:\\Users\\admin\\Desktop\\TheRestoManager\\images\\red.png");

@@ -25,6 +25,8 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.border.LineBorder;
 import javax.swing.event.DocumentListener;
+
+import invoice.Bill;
 import jiconfont.icons.FontAwesome;
 import jiconfont.swing.IconFontSwing;
 
@@ -70,12 +72,15 @@ public class Dashboard extends javax.swing.JFrame {
         this.setResizable(false);
         this.setIconImage(MyConstants.FRAMELOGO.getImage());
         conn = MySqlConnect.connectDB();
+        foodToBeMade = new FoodToBeMade();
         readyOrdersTable = new ReadyOrders();
         IconFontSwing.register(FontAwesome.getIconFont());
         System.out.println("TESTTTTT");
         readyOrdersTable.truncTable();
         createServer();
         addDocumentListenerToSearch();
+//        ChefPage cp = new ChefPage();
+//        cp.main(null);
     }
 
     /**
@@ -626,7 +631,7 @@ public class Dashboard extends javax.swing.JFrame {
         txtTable8Cost.setBorder(null);
 
         btnBillTable1.setBackground(new java.awt.Color(96, 218, 137));
-        btnBillTable1.setText("Bill");
+        btnBillTable1.setText("invoice.Bill");
         btnBillTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBillTable1MouseEntered(evt);
@@ -642,7 +647,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnBillTable2.setBackground(new java.awt.Color(96, 218, 137));
-        btnBillTable2.setText("Bill");
+        btnBillTable2.setText("invoice.Bill");
         btnBillTable2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBillTable2MouseEntered(evt);
@@ -658,7 +663,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnBillTable3.setBackground(new java.awt.Color(96, 218, 137));
-        btnBillTable3.setText("Bill");
+        btnBillTable3.setText("invoice.Bill");
         btnBillTable3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBillTable3MouseEntered(evt);
@@ -674,7 +679,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnBillTable4.setBackground(new java.awt.Color(96, 218, 137));
-        btnBillTable4.setText("Bill");
+        btnBillTable4.setText("invoice.Bill");
         btnBillTable4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBillTable4MouseEntered(evt);
@@ -690,7 +695,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnBillTable5.setBackground(new java.awt.Color(96, 218, 137));
-        btnBillTable5.setText("Bill");
+        btnBillTable5.setText("invoice.Bill");
         btnBillTable5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBillTable5MouseEntered(evt);
@@ -706,7 +711,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnBillTable6.setBackground(new java.awt.Color(96, 218, 137));
-        btnBillTable6.setText("Bill");
+        btnBillTable6.setText("invoice.Bill");
         btnBillTable6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBillTable6MouseEntered(evt);
@@ -715,14 +720,10 @@ public class Dashboard extends javax.swing.JFrame {
                 btnBillTable6MouseExited(evt);
             }
         });
-        btnBillTable6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBillTable6ActionPerformed(evt);
-            }
-        });
+        btnBillTable6.addActionListener(this::btnBillTable6ActionPerformed);
 
         btnBillTable7.setBackground(new java.awt.Color(96, 218, 137));
-        btnBillTable7.setText("Bill");
+        btnBillTable7.setText("invoice.Bill");
         btnBillTable7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBillTable7MouseEntered(evt);
@@ -738,7 +739,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnBillTable8.setBackground(new java.awt.Color(96, 218, 137));
-        btnBillTable8.setText("Bill");
+        btnBillTable8.setText("invoice.Bill");
         btnBillTable8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnBillTable8MouseEntered(evt);
@@ -1455,7 +1456,9 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public void calculateCostOfTable(int tableNo) {
         try {
+            System.out.println("COST: ");
             ResultSet resultSet = foodToBeMade.getFoodItemsToBeMade(tableNo);
+            System.out.println("COST: " + resultSet);
             while (resultSet.next()) {
                 String query = "SELECT foodprice FROM fooditems where foodname = '" + resultSet.getString(1) + "'";
                 System.out.println(query);
@@ -1698,14 +1701,14 @@ public class Dashboard extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Windows look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* If Windows (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

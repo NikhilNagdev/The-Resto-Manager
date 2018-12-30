@@ -1214,7 +1214,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="89" green="da" red="60" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Bill"/>
+                <Property name="text" type="java.lang.String" value="invoice.Bill"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBillTable1MouseEntered"/>
@@ -1227,7 +1227,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="89" green="da" red="60" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Bill"/>
+                <Property name="text" type="java.lang.String" value="invoice.Bill"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBillTable2MouseEntered"/>
@@ -1240,7 +1240,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="89" green="da" red="60" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Bill"/>
+                <Property name="text" type="java.lang.String" value="invoice.Bill"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBillTable3MouseEntered"/>
@@ -1253,7 +1253,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="89" green="da" red="60" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Bill"/>
+                <Property name="text" type="java.lang.String" value="invoice.Bill"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBillTable4MouseEntered"/>
@@ -1266,7 +1266,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="89" green="da" red="60" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Bill"/>
+                <Property name="text" type="java.lang.String" value="invoice.Bill"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBillTable5MouseEntered"/>
@@ -1279,7 +1279,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="89" green="da" red="60" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Bill"/>
+                <Property name="text" type="java.lang.String" value="invoice.Bill"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBillTable6MouseEntered"/>
@@ -1292,7 +1292,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="89" green="da" red="60" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Bill"/>
+                <Property name="text" type="java.lang.String" value="invoice.Bill"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBillTable7MouseEntered"/>
@@ -1305,7 +1305,7 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="89" green="da" red="60" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Bill"/>
+                <Property name="text" type="java.lang.String" value="invoice.Bill"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnBillTable8MouseEntered"/>

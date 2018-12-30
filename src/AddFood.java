@@ -127,11 +127,6 @@ public class AddFood extends javax.swing.JFrame {
         btnNew2.setBackground(new java.awt.Color(110, 218, 161));
         btnNew2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         btnNew2.setText("New");
-        btnNew2.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                btnNew2FocusGained(evt);
-            }
-        });
         btnNew2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnNew2MouseEntered(evt);
@@ -516,10 +511,6 @@ public class AddFood extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_categoryListMouseClicked
 
-    private void btnNew2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnNew2FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnNew2FocusGained
-
     private void btnNew2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnNew2MouseEntered
         mouseEnteredAnimation(btnNew2);
     }//GEN-LAST:event_btnNew2MouseEntered
@@ -765,14 +756,14 @@ public class AddFood extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Windows look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* If Windows (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 

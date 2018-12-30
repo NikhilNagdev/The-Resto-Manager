@@ -18,6 +18,8 @@ public class FoodCategory {
     
     public int getCategoryID(String foodName) {
         String query = "SELECT foodcategory FROM fooditems WHERE foodname = '" + foodName + "'";
+        System.out.println("QUERY: " + query);
+        System.out.println("QUERY: " + conn);
         try {
             ResultSet rs = conn.prepareStatement(query).executeQuery();
             rs.next();
