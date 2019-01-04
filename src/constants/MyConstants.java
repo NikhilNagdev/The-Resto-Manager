@@ -1,3 +1,4 @@
+package constants;
 
 import java.io.File;
 import javax.swing.ImageIcon;
