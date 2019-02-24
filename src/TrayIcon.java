@@ -18,13 +18,13 @@ import java.awt.TrayIcon;
 import java.awt.TrayIcon.MessageType;
 import java.net.MalformedURLException;
 
-public class TrayIconDemo {
+public class TrayIcon {
 
     /*
     Test Code to check tray icon
     public static void main(String[] args) throws AWTException, MalformedURLException {
         if (SystemTray.isSupported()) {
-            TrayIconDemo td = new TrayIconDemo();
+            TrayIcon td = new TrayIcon();
             td.displayTray(null, 0);
         } else {
             System.err.println("System tray not supported!");
@@ -41,7 +41,7 @@ public class TrayIconDemo {
         //Alternative (if the icon is on the classpath):
         //Image image = Toolkit.getToolkit().createImage(getClass().getResource("icon.png"));
 
-        TrayIcon trayIcon = new TrayIcon(image, "Tray Demo");
+        java.awt.TrayIcon trayIcon = new java.awt.TrayIcon(image, "Tray Demo");
         //Let the system resize the image if needed
         trayIcon.setImageAutoSize(true);
         //Set tooltip text for the tray icon

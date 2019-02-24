@@ -1,5 +1,6 @@
 
 import DatabaseTables.MySqlConnect;
+import DatabaseTables.User;
 import constants.MyConstants;
 
 import java.awt.Color;
@@ -12,14 +13,13 @@ import java.awt.event.WindowEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 /**
  *
- * @author admin
+ * @author Nikhil
  */
 public class LoginPage extends javax.swing.JFrame {
 
@@ -39,6 +39,7 @@ public class LoginPage extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setSize(850, 490);
         this.setResizable(false);
+        user = new User();
     }
     
     /**
@@ -372,32 +373,14 @@ public class LoginPage extends javax.swing.JFrame {
         btnLogin.setLocation((int)p.getX()-5, (int)p.getY()-4);
     }//GEN-LAST:event_btnLoginMouseEntered
     
-    /*
-      * This method will return the String which contains the post of user that is trying to login 
-        to the system.
-    */
-    private String getPost(){
-        String post = null;
-        try{
-            String sql = "SELECT post FROM users WHERE username = ? and password = ?";
-            preparedStatement = conn.prepareStatement(sql);
-            preparedStatement.setString(1, txtUsername.getText());
-            preparedStatement.setString(2, txtPassword.getText());
-            rs = preparedStatement.executeQuery();
-            rs.next();
-            post = rs.getString(1);
-       } catch(SQLException e){
-            System.out.println(e);
-       }
-       return post;
-    }
+
     
     /*
       * This method deals with the users that are trying to login to the system.
     */
     private void processLogin(){
         try {
-            String post = getPost(); //This will return the post of the user that is trying to login to the system.
+            String post = user.getPost(txtUsername.getText(), txtPassword.getText()); //This will return the post of the user that is trying to login to the system.
             if (!(post==null)) {
                 setLoadingScreen();
                 t = new Timer(3000, new ActionListener(){
@@ -525,5 +508,5 @@ public class LoginPage extends javax.swing.JFrame {
     private PreparedStatement preparedStatement = null;
     private ResultSet rs = null;
     private Timer t;
-    BlurLayerUI b = null;
+    private User user = null;
 }

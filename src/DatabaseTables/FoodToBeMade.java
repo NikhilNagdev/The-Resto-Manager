@@ -27,8 +27,7 @@ public class FoodToBeMade {
         try {
             String query = "SELECT * FROM foodtobemade";
             PreparedStatement ps = conn.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
-            return rs;
+            return ps.executeQuery();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Issue while setting pending orders: " + e);
         }
@@ -79,6 +78,17 @@ public class FoodToBeMade {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Issue while deleting orders: " + e);
         }
+    }
+
+    public ResultSet search(String key){
+        String searchQuery = "SELECT foodname FROM foodtobemade WHERE foodname like '%" + key + "%'";
+        try {
+            PreparedStatement ps = conn.prepareStatement(searchQuery);
+            return ps.executeQuery();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Issue while searching: " + e);
+        }
+        return null;
     }
 
 

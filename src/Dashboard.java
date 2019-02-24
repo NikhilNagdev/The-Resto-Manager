@@ -41,7 +41,7 @@ import jiconfont.swing.IconFontSwing;
  */
 /**
  *
- * @author admin
+ * @author Nikhil
  */
 public class Dashboard extends javax.swing.JFrame {
 
@@ -83,8 +83,6 @@ public class Dashboard extends javax.swing.JFrame {
         readyOrdersTable.truncTable();
         createServer();
         addDocumentListenerToSearch();
-//        ChefPage cp = new ChefPage();
-//        cp.main(null);
     }
 
     /**
@@ -1425,7 +1423,7 @@ public class Dashboard extends javax.swing.JFrame {
      * shown on the ready order list.
      */
     public void addToReadyOrderList(Object orderWithTable) {
-        TrayIconDemo td = new TrayIconDemo();
+        TrayIcon td = new TrayIcon();
         Map<Map<String, Integer>, Integer> map = (Map<Map<String, Integer>, Integer>) orderWithTable;
         Map<String, Integer> readyOrderWithTable = null;
         for (Entry<Map<String, Integer>, Integer> entry : map.entrySet()) {
@@ -1546,7 +1544,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     /**
-     * This method will remove the food item from the pendingOrder list if that
+     * This method will remove the food item from the pendingOrder list if the
      * item is prepared
      */
     public void removeFromPendingOrders() {
@@ -1580,7 +1578,6 @@ public class Dashboard extends javax.swing.JFrame {
         pnlReadyOrders.setBorder(new LineBorder(Color.red));
         t = new Timer(100, new ActionListener() {//This will create timer for every 100 milliseconds
             private int i = 0, count = 0;
-
             @Override
             //This method is invoked after every 100 milliseconds
             public void actionPerformed(ActionEvent ae) {
@@ -1625,12 +1622,10 @@ public class Dashboard extends javax.swing.JFrame {
     public void search() {
         String key = txtPendingOrderSearch.getText();
         String searchQuery = "";
+        PreparedStatement ps;
         if (!key.equals("")) {
             try {
-                System.out.println("In search: " + searchQuery);
-                searchQuery = "SELECT foodname FROM foodtobemade WHERE foodname like '%" + key + "%'";
-                PreparedStatement ps = conn.prepareStatement(searchQuery);
-                ResultSet rs = ps.executeQuery();
+                ResultSet rs = foodToBeMade.search(key);
                 Vector<String> items = new Vector<>();
                 while (rs.next()) {
                     items.add(rs.getString("foodname"));
@@ -1638,14 +1633,11 @@ public class Dashboard extends javax.swing.JFrame {
                 listPendingFoodItems.removeAll();
                 listPendingFoodItems.setListData(items);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Issue while seraching: " + e);
+                JOptionPane.showMessageDialog(null, "Issue while searching: " + e);
             }
         } else {
             try {
-                System.out.println("In search: " + searchQuery);
-                searchQuery = "SELECT * FROM foodtobemade";
-                PreparedStatement ps = conn.prepareStatement(searchQuery);
-                ResultSet rs = ps.executeQuery();
+                ResultSet rs = foodToBeMade.getFoodItemsToBeMade();
                 Vector<String> items = new Vector<>();
                 while (rs.next()) {
                     items.add(rs.getString("foodname"));
@@ -1653,7 +1645,7 @@ public class Dashboard extends javax.swing.JFrame {
                 listPendingFoodItems.removeAll();
                 listPendingFoodItems.setListData(items);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Issue while seraching: " + e);
+                JOptionPane.showMessageDialog(null, "Issue while searching: " + e);
             }
         }
     }
