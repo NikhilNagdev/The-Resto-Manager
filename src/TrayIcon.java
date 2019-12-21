@@ -14,7 +14,6 @@ import constants.MyConstants;
 import java.awt.AWTException;
 import java.awt.Image;
 import java.awt.SystemTray;
-import java.awt.TrayIcon;
 import java.awt.TrayIcon.MessageType;
 import java.net.MalformedURLException;
 

@@ -31,7 +31,7 @@ public class LoginPage extends javax.swing.JFrame {
     /**
      * This method is called from within the constructor to initialize.
      */
-    public void myInitComponents(){
+    private void myInitComponents(){
         conn = MySqlConnect.connectDB();
         setIconForUsername();
         setIconForPassword();
@@ -380,18 +380,24 @@ public class LoginPage extends javax.swing.JFrame {
     */
     private void processLogin(){
         try {
+            
             String post = user.getPost(txtUsername.getText(), txtPassword.getText()); //This will return the post of the user that is trying to login to the system.
+            
             if (!(post==null)) {
+                
                 setLoadingScreen();
+                
                 t = new Timer(3000, new ActionListener(){
                 @Override
                 public void actionPerformed(ActionEvent ae){
+                    System.out.println(post.equals("Chef"));
                     if(post.equals("Manager")){
                         close();//This will close the login frame.
                         Dashboard.main(null);
                         t.stop();
                     }
                     else if(post.equals("Chef")){
+                        
                         close();//This will close the login frame.
                         ChefPage.main(null);
                         t.stop();

@@ -39,7 +39,7 @@ public class Bill {
         orders = new ArrayList<>();
 //        invoiceNo = getNextInvoiceNo();
         file = new File(this.path + "\\Invoice" + invoiceNo + ".pdf");
-        loadPDFFile(new File("C:\\Users\\admin\\Desktop\\TheRestoManager\\Invoice.pdf"));
+        loadPDFFile(new File("Invoice.pdf"));
         CGSTAmount = 0;
         SGSTAmount = 0;
         totalGSTAmount = 0;
